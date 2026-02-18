@@ -2,183 +2,271 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Soukromá kancelář",
-    description:
-      "Vlastní uzamykatelný prostor pro váš tým. Plně vybavená kancelář s maximálním soukromím a komfortem.",
+    title: "Soukromá Kancelář",
     href: "/soukroma-kancelar",
+    features: [
+      "Vlastní uzamykatelný prostor",
+      "Plně vybavená kancelář",
+      "Maximální soukromí",
+    ],
+    gradient: "from-blue-900/50 via-blue-800/30 to-slate-900/50",
+  },
+  {
+    title: "Sdílená Kancelář",
+    href: "/sdilena-kancelar",
+    features: [
+      "Sdílený prostor s profesionály",
+      "Flexibilní podmínky",
+      "Networking a komunita",
+    ],
+    gradient: "from-indigo-900/50 via-indigo-800/30 to-slate-900/50",
+  },
+  {
+    title: "Sdílený Stůl (Coworking)",
+    href: "/coworking",
+    features: [
+      "Hot-desk princip",
+      "Inspirativní prostředí",
+      "Denní i měsíční členství",
+    ],
+    gradient: "from-violet-900/50 via-violet-800/30 to-slate-900/50",
+  },
+  {
+    title: "Zasedací Místnosti",
+    href: "/zasedaci-mistnosti",
+    features: [
+      "Kapacita 4–20 osob",
+      "Moderní technika",
+      "Hodinový pronájem",
+    ],
+    gradient: "from-cyan-900/50 via-cyan-800/30 to-slate-900/50",
+  },
+  {
+    title: "Školení & Workshop",
+    href: "/skoleni",
+    features: [
+      "Kapacita až 30 osob",
+      "Flexibilní uspořádání",
+      "Kompletní technická podpora",
+    ],
+    gradient: "from-emerald-900/50 via-emerald-800/30 to-slate-900/50",
+  },
+];
+
+const whyItems = [
+  {
+    title: "24/7 Přístup",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Servisovaná kancelář",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Representativní prostory",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
   },
   {
-    title: "Sdílená kancelář",
-    description:
-      "Sdílejte moderní prostor s dalšími profesionály. Ideální pro malé týmy a freelancery.",
-    href: "/sdilena-kancelar",
+    title: "Klid na práci",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
   },
   {
-    title: "Coworking",
-    description:
-      "Flexibilní pracovní místo v inspirativním prostředí. Přijďte kdykoliv a pracujte ve společnosti ambiciózních lidí.",
-    href: "/coworking",
+    title: "Flexibilní možnosti",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       </svg>
     ),
   },
   {
-    title: "Zasedací místnosti",
-    description:
-      "Reprezentativní prostory pro vaše schůzky, prezentace a jednání s klienty.",
-    href: "/zasedaci-mistnosti",
+    title: "Prémiová lokalita",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
   },
-  {
-    title: "Školení & Workshop",
-    description:
-      "Prostorné místnosti s moderní technikou pro školení, workshopy a firemní akce.",
-    href: "/skoleni",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
-    ),
-  },
-];
-
-const galleryImages = [
-  { alt: "Moderní kancelářský prostor", placeholder: "bg-secondary/20" },
-  { alt: "Coworkingová zóna", placeholder: "bg-primary/10" },
-  { alt: "Zasedací místnost", placeholder: "bg-accent/40" },
-  { alt: "Recepce a vstupní hala", placeholder: "bg-secondary/15" },
-  { alt: "Odpočinková zóna", placeholder: "bg-primary/15" },
-  { alt: "Kuchyňka a zázemí", placeholder: "bg-accent/30" },
 ];
 
 const locations = [
   {
-    name: "Hlavní nádraží Olomouc",
-    distance: "10 min pěšky",
-    icon: "🚂",
+    name: "Hlavní nádraží",
+    distance: "8 min",
+    type: "MHD",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h8m-8 4h8m-4 4v3m-4-3h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v9a2 2 0 002 2zm-2 3h12" />
+      </svg>
+    ),
   },
   {
-    name: "Centrum / Horní náměstí",
-    distance: "8 min pěšky",
-    icon: "🏛️",
+    name: "Centrum",
+    distance: "6 min",
+    type: "pěšky",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
   },
   {
-    name: "OC Šantovka",
-    distance: "5 min pěšky",
-    icon: "🛍️",
+    name: "Galerie Šantovka",
+    distance: "9 min",
+    type: "pěšky",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+      </svg>
+    ),
   },
-  {
-    name: "Tržnice Olomouc",
-    distance: "7 min pěšky",
-    icon: "🏪",
-  },
-  {
-    name: "Univerzita Palackého",
-    distance: "12 min pěšky",
-    icon: "🎓",
-  },
-  {
-    name: "Autobusové nádraží",
-    distance: "12 min pěšky",
-    icon: "🚌",
-  },
+];
+
+const partners = [
+  "ASGV",
+  "ACOM",
+  "Brinidic",
+  "Olomouc",
+  "Jerkovna",
+  "Smiteth",
 ];
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-foreground via-foreground to-primary-dark overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,97,58,0.3),transparent_60%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(232,201,160,0.2),transparent_50%)]" />
+      <section className="relative min-h-screen flex items-center">
+        {/* Background with gradient placeholder for office photo */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#12243d] to-[#0a1628]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,rgba(30,70,120,0.25),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(230,53,96,0.08),transparent_50%)]" />
+          {/* Subtle grid pattern to add visual interest */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10 w-full">
           <div className="max-w-3xl">
-            <p className="text-primary-light font-semibold text-sm tracking-widest uppercase mb-4">
-              Prémiové kancelářské prostory
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-6">
-              Váš nový pracovní prostor v{" "}
-              <span className="text-primary-light">srdci Olomouce</span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
+              Luxusní kanceláře
+              <br />
+              uprostřed Olomouce.
             </h1>
-            <p className="text-lg sm:text-xl text-warm-gray-light leading-relaxed mb-10 max-w-2xl">
-              FREEWORK nabízí luxusní kanceláře, coworkingové prostory a
-              zasedací místnosti na prestižní adrese tř. Kosmonautů. Moderní
-              zázemí pro váš byznys.
+            <p className="text-lg sm:text-xl text-warm-gray leading-relaxed mb-10 max-w-2xl">
+              Moderní kancelářské prostory na prestižní adrese. Soukromé
+              kanceláře, coworking i zasedací místnosti – vše pod jednou
+              střechou.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/kontakt"
-                className="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl text-center"
+                className="bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-dark transition-colors text-center"
               >
-                Nezávazná poptávka
+                Rezervovat prohlídku
               </Link>
               <Link
-                href="/galerie"
-                className="border-2 border-cream/30 text-cream px-8 py-4 rounded-full text-lg font-semibold hover:bg-cream/10 transition-all text-center"
+                href="#sluzby"
+                className="border border-warm-gray/30 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/5 transition-colors text-center"
               >
-                Prohlédnout prostory
+                Zobrazit služby
               </Link>
             </div>
           </div>
         </div>
-        {/* Decorative shape */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-background" style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 100%)" }} />
+
+        {/* Bottom badges */}
+        <div className="absolute bottom-0 left-0 right-0 border-t border-accent/50 bg-background/60 backdrop-blur-md">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap justify-start divide-x divide-accent/50">
+              <div className="flex items-center gap-3 py-5 pr-8">
+                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-white/80 text-sm font-medium">24/7 přístup</span>
+              </div>
+              <div className="flex items-center gap-3 py-5 px-8">
+                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span className="text-white/80 text-sm font-medium">Prémiová adresa</span>
+              </div>
+              <div className="flex items-center gap-3 py-5 pl-8">
+                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span className="text-white/80 text-sm font-medium">Servisovaná kancelář</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Services Section */}
       <section id="sluzby" className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">
-              Co nabízíme
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Naše služby
+          <div className="mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Vyberte si prostor pro práci
             </h2>
-            <p className="text-warm-gray max-w-2xl mx-auto text-lg">
-              Vyberte si z pestré nabídky kancelářských řešení přesně to, co
-              potřebuje váš byznys.
+            <p className="text-warm-gray max-w-2xl text-lg">
+              Od soukromých kanceláří po flexibilní coworking – najděte řešení,
+              které sedí přesně vašemu byznysu.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="group bg-warm-white rounded-2xl p-8 border border-accent/30 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+                className="group bg-warm-white rounded-2xl overflow-hidden border border-accent/30 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-warm-gray leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="mt-6 flex items-center text-primary font-semibold text-sm">
-                  Zjistit více
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                {/* Image placeholder */}
+                <div className={`aspect-[16/10] bg-gradient-to-br ${service.gradient} flex items-center justify-center relative overflow-hidden`}>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05),transparent_70%)]" />
+                  <svg className="w-16 h-16 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-white mb-4 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <ul className="space-y-2.5 mb-6">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-3 text-warm-gray text-sm">
+                        <svg className="w-4 h-4 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-center text-primary font-semibold text-sm">
+                    Detail služby
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -189,64 +277,24 @@ export default function Home() {
       {/* Why FREEWORK */}
       <section className="py-24 bg-cream-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">
-              Proč si vybrat nás
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Proč FREEWORK?
             </h2>
+            <div className="flex items-center gap-0">
+              <div className="h-1 w-16 bg-primary rounded-full" />
+              <div className="h-1 flex-1 bg-gradient-to-r from-primary/30 to-transparent rounded-full" />
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Prémiová lokalita",
-                desc: "Přímo v centru Olomouce, skvělá dostupnost MHD i autem.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Moderní vybavení",
-                desc: "Vysokorychlostní internet, tiskárny, projektory a další.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Flexibilní pronájem",
-                desc: "Od hodinového pronájmu po dlouhodobé smlouvy – vše podle vás.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Komunita",
-                desc: "Staňte se součástí komunity profesionálů a podnikatelů.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                ),
-              },
-            ].map((item) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
+            {whyItems.map((item) => (
               <div key={item.title} className="text-center">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
+                <div className="w-16 h-16 bg-warm-white rounded-2xl flex items-center justify-center text-primary mx-auto mb-4 border border-accent/30">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
+                <h3 className="text-sm sm:text-base font-semibold text-white">
                   {item.title}
                 </h3>
-                <p className="text-warm-gray text-sm leading-relaxed">
-                  {item.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -254,30 +302,29 @@ export default function Home() {
       </section>
 
       {/* Gallery Preview */}
-      <section className="py-24 bg-background">
+      <section id="galerie" className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">
-              Naše prostory
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Galerie
             </h2>
-            <p className="text-warm-gray max-w-2xl mx-auto text-lg">
-              Podívejte se, jak vypadají naše moderní kancelářské prostory.
-            </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((img, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { label: "Soukromá kancelář", gradient: "from-blue-900/40 to-slate-800/40" },
+              { label: "Coworkingový prostor", gradient: "from-indigo-900/40 to-slate-800/40" },
+              { label: "Zasedací místnost", gradient: "from-cyan-900/40 to-slate-800/40" },
+            ].map((img, i) => (
               <div
                 key={i}
-                className={`aspect-[4/3] rounded-2xl ${img.placeholder} flex items-center justify-center border border-accent/20`}
+                className={`aspect-[4/3] rounded-2xl bg-gradient-to-br ${img.gradient} flex items-center justify-center border border-accent/20 overflow-hidden relative group cursor-pointer`}
               >
-                <div className="text-center p-6">
-                  <svg className="w-12 h-12 text-warm-gray-light mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)]" />
+                <div className="text-center p-6 relative z-10">
+                  <svg className="w-12 h-12 text-white/20 mx-auto mb-3 group-hover:text-white/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <p className="text-warm-gray-light text-sm">{img.alt}</p>
+                  <p className="text-white/40 text-sm">{img.label}</p>
                 </div>
               </div>
             ))}
@@ -285,9 +332,9 @@ export default function Home() {
           <div className="text-center mt-10">
             <Link
               href="/galerie"
-              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors shadow-md"
+              className="inline-flex items-center gap-2 border border-warm-gray/30 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/5 transition-colors"
             >
-              Zobrazit celou galerii
+              Zobrazit galerii
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -297,43 +344,13 @@ export default function Home() {
       </section>
 
       {/* Location Section */}
-      <section className="py-24 bg-cream-dark">
+      <section id="lokalita" className="py-24 bg-cream-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">
-                Kde nás najdete
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-                Skvělá lokalita
-              </h2>
-              <p className="text-warm-gray text-lg leading-relaxed mb-8">
-                Naše kanceláře se nachází na adrese{" "}
-                <strong className="text-foreground">
-                  tř. Kosmonautů 1221/2a, Olomouc
-                </strong>
-                . Strategická poloha v centru města s výbornou dopravní
-                dostupností.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {locations.map((loc) => (
-                  <div
-                    key={loc.name}
-                    className="flex items-center gap-3 bg-warm-white rounded-xl p-4 border border-accent/20"
-                  >
-                    <span className="text-2xl">{loc.icon}</span>
-                    <div>
-                      <p className="font-semibold text-foreground text-sm">
-                        {loc.name}
-                      </p>
-                      <p className="text-warm-gray text-sm">{loc.distance}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="aspect-square bg-secondary/10 rounded-2xl flex items-center justify-center border border-accent/20">
-              <div className="text-center p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Map placeholder */}
+            <div className="aspect-[4/3] bg-warm-white rounded-2xl flex items-center justify-center border border-accent/20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-slate-900/20" />
+              <div className="text-center p-8 relative z-10">
                 <svg className="w-16 h-16 text-warm-gray-light mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -344,33 +361,68 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            {/* Location info */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+                Uprostřed města.
+                <br />
+                Všude blízko.
+              </h2>
+              <p className="text-warm-gray text-lg leading-relaxed mb-8">
+                Naše kanceláře se nachází na strategickém místě v centru
+                Olomouce s výbornou dostupností.
+              </p>
+              <div className="space-y-4 mb-8">
+                {locations.map((loc) => (
+                  <div
+                    key={loc.name}
+                    className="flex items-center gap-4 bg-warm-white rounded-xl p-4 border border-accent/20"
+                  >
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+                      {loc.icon}
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-white text-sm">
+                        {loc.name}
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-primary font-bold text-sm">{loc.distance}</span>
+                      <span className="text-warm-gray text-sm ml-1">{loc.type}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/kontakt"
+                className="inline-flex items-center gap-2 border border-warm-gray/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/5 transition-colors"
+              >
+                Jak se k nám dostanete
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary to-primary-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Připraveni začít?
-          </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-            Kontaktujte nás a domluvte si nezávaznou prohlídku našich prostor.
-            Rádi vám najdeme to pravé řešení pro váš byznys.
+      {/* Partners Section */}
+      <section className="py-16 bg-background border-t border-accent/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-warm-gray-light text-sm font-medium tracking-widest uppercase mb-10">
+            Nám důvěřují
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/kontakt"
-              className="bg-white text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-cream transition-colors shadow-lg text-center"
-            >
-              Kontaktujte nás
-            </Link>
-            <a
-              href="tel:+420000000000"
-              className="border-2 border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-colors text-center"
-            >
-              Zavolejte nám
-            </a>
+          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
+            {partners.map((partner) => (
+              <div
+                key={partner}
+                className="text-warm-gray-light/40 font-bold text-xl tracking-wider hover:text-warm-gray transition-colors cursor-default"
+              >
+                {partner}
+              </div>
+            ))}
           </div>
         </div>
       </section>

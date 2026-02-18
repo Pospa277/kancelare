@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #FFF8F0;
-  --color-foreground: #2D1B0E;
-  --color-primary: #C4613A;
-  --color-primary-light: #D4845F;
-  --color-primary-dark: #A14E2E;
-  --color-secondary: #8B6F47;
-  --color-accent: #E8C9A0;
-  --color-cream: #FFF8F0;
-  --color-cream-dark: #F5E6D3;
-  --color-warm-gray: #6B5B4F;
-  --color-warm-gray-light: #A39488;
-  --color-warm-white: #FFFAF5;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --color-background: #0c1220;
+  --color-foreground: #ffffff;
+  --color-primary: #e63560;
+  --color-primary-light: #ff4d75;
+  --color-primary-dark: #c42d50;
+  --color-secondary: #2a3a50;
+  --color-accent: #1e2d42;
+  --color-cream: #ffffff;
+  --color-cream-dark: #111b2a;
+  --color-warm-gray: #8899aa;
+  --color-warm-gray-light: #6b7d8f;
+  --color-warm-white: #161f30;
+  --font-sans: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 body {
@@ -32,7 +32,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-cream-dark);
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {

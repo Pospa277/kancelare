@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: {
     default: "FREEWORK | Luxusní kanceláře v centru Olomouce",
-    template: "%s | FREEWORK Olomouc",
+    template: "%s | FREEWORK Olomouce",
   },
   description:
     "Pronájem luxusních kanceláří, coworkingových prostor a zasedacích místností v srdci Olomouce. Soukromé kanceláře, sdílené prostory, školení a workshopy.",

@@ -4,13 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/", label: "Úvod" },
-  { href: "/soukroma-kancelar", label: "Soukromá kancelář" },
-  { href: "/sdilena-kancelar", label: "Sdílená kancelář" },
-  { href: "/coworking", label: "Coworking" },
-  { href: "/zasedaci-mistnosti", label: "Zasedací místnosti" },
-  { href: "/skoleni", label: "Školení & Workshop" },
-  { href: "/galerie", label: "Galerie" },
+  { href: "#sluzby", label: "Služby" },
+  { href: "#galerie", label: "Galerie" },
+  { href: "#lokalita", label: "Lokalita" },
+  { href: "#cenik", label: "Ceník" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
@@ -18,26 +15,23 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-warm-white/95 backdrop-blur-sm border-b border-accent/50 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-accent/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">F</span>
-            </div>
-            <span className="text-2xl font-bold text-foreground tracking-tight">
-              FREE<span className="text-primary">WORK</span>
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-2xl font-bold text-white tracking-tight">
+              FREEWORK
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium text-warm-gray hover:text-primary transition-colors rounded-md hover:bg-cream-dark/50"
+                className="text-sm font-medium text-warm-gray hover:text-white transition-colors"
               >
                 {link.label}
               </Link>
@@ -48,15 +42,15 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <Link
               href="/kontakt"
-              className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg"
+              className="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-dark transition-colors"
             >
-              Nezávazná poptávka
+              Rezervovat prohlídku
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 rounded-md text-warm-gray hover:text-primary hover:bg-cream-dark/50 transition-colors"
+            className="lg:hidden p-2 text-warm-gray hover:text-white transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Otevřít menu"
           >
@@ -93,7 +87,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-3 text-sm font-medium text-warm-gray hover:text-primary hover:bg-cream-dark/50 rounded-md transition-colors"
+                  className="px-4 py-3 text-sm font-medium text-warm-gray hover:text-white hover:bg-warm-white rounded-md transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -101,10 +95,10 @@ export default function Navbar() {
               ))}
               <Link
                 href="/kontakt"
-                className="mx-4 mt-3 bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors text-center shadow-md"
+                className="mx-4 mt-3 bg-primary text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-primary-dark transition-colors text-center"
                 onClick={() => setIsOpen(false)}
               >
-                Nezávazná poptávka
+                Rezervovat prohlídku
               </Link>
             </div>
           </div>
